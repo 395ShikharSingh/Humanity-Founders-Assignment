@@ -14,7 +14,7 @@ const Register = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/hospital/staff/signup', {
+      const response = await fetch('https://humanity-founders-assignment.onrender.com/hospital/staff/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

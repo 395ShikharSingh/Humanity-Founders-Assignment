@@ -23,7 +23,7 @@ const MyAppointments = () => {
         phone: formData.phone
       });
 
-      const response = await fetch(`http://localhost:3000/hospital/user/appointments?${queryParams}`, {
+      const response = await fetch(`https://humanity-founders-assignment.onrender.com/hospital/user/appointments?${queryParams}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

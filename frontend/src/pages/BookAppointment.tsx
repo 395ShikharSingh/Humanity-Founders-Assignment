@@ -19,7 +19,7 @@ const BookAppointment = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await fetch('http://localhost:3000/hospital/user/doctors');
+        const response = await fetch('https://humanity-founders-assignment.onrender.com/hospital/user/doctors');
         if (!response.ok) {
           throw new Error('Failed to fetch doctors');
         }
@@ -38,7 +38,7 @@ const BookAppointment = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/hospital/user/book-appointment', {
+      const response = await fetch('https://humanity-founders-assignment.onrender.com/hospital/user/book-appointment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -28,7 +28,7 @@ const Appointments = () => {
           throw new Error('No authentication token found');
         }
 
-        const response = await fetch('http://localhost:3000/hospital/staff/appointments', {
+        const response = await fetch('https://humanity-founders-assignment.onrender.com/hospital/staff/appointments', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
