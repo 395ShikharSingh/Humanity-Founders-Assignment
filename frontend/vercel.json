@@ -12,7 +12,7 @@
   "rewrites": [
     {
       "source": "/static/(.*)",
-      "continue": true
+      "destination": "/static/$1"
     },
     {
       "source": "/favicon.ico",
