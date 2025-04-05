@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/hospital';
+const API_URL = 'https://humanity-founders-assignment.onrender.com/hospital';
 
 const getHeaders = () => {
   const token = localStorage.getItem('token');
@@ -30,7 +30,7 @@ export const api = {
 
   // Doctors
   getDoctors: async () => {
-    const response = await fetch(`${API_URL}/staff/doctors`, {
+    const response = await fetch(`${API_URL}/user/doctors`, {
       headers: getHeaders(),
     });
     return response.json();
@@ -49,6 +49,22 @@ export const api = {
   getAppointments: async () => {
     const response = await fetch(`${API_URL}/staff/appointments`, {
       headers: getHeaders(),
+    });
+    return response.json();
+  },
+
+  // Public endpoints
+  bookAppointment: async (appointment: {
+    userName: string;
+    phone: string;
+    appointmentDate: string;
+    description: string;
+    doctorId: number;
+  }) => {
+    const response = await fetch(`${API_URL}/user/book-appointment`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(appointment),
     });
     return response.json();
   },
