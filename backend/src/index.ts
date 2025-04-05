@@ -3,7 +3,7 @@ import cors from "cors";
 import rootRouter from "./routes/index";
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 
 app.use(cors({
   origin: "*", 
@@ -14,6 +14,11 @@ app.use(cors({
 app.use(express.json());
 app.use("/hospital", rootRouter);
 
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.json({ status: "healthy" });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
