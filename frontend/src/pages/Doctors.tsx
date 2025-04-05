@@ -16,7 +16,7 @@ const Doctors = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await fetch('http://localhost:3000/hospital/user/doctors');
+        const response = await fetch('https://humanity-founders-assignment.onrender.com/hospital/user/doctors');
         if (!response.ok) {
           throw new Error('Failed to fetch doctors');
         }
@@ -40,7 +40,7 @@ const Doctors = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await fetch('http://localhost:3000/hospital/staff/add-doctor', {
+      const response = await fetch('https://humanity-founders-assignment.onrender.com/hospital/staff/add-doctor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
